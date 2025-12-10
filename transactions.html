@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transactions - Core Banking System</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h1>🏦 Core Banking System</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Dashboard</a></li>
+                <li><a href="customers.html">Customers</a></li>
+                <li><a href="accounts.html">Accounts</a></li>
+                <li><a href="transactions.html" class="active">Transactions</a></li>
+                <li><a href="loans.html">Loans</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container main-content">
+        <h2>Transaction Management</h2>
+
+        <div class="form-section">
+            <h3>Deposit</h3>
+            <form id="depositForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="depositAccount">Account Number *</label>
+                        <input type="text" id="depositAccount" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="depositAmount">Amount *</label>
+                        <input type="number" id="depositAmount" required min="1" step="0.01">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-success">Deposit</button>
+            </form>
+        </div>
+
+        <div class="form-section">
+            <h3>Withdraw</h3>
+            <form id="withdrawForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="withdrawAccount">Account Number *</label>
+                        <input type="text" id="withdrawAccount" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="withdrawAmount">Amount *</label>
+                        <input type="number" id="withdrawAmount" required min="1" step="0.01">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-danger">Withdraw</button>
+            </form>
+        </div>
+
+        <div class="form-section">
+            <h3>Transfer</h3>
+            <form id="transferForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="fromAccount">From Account *</label>
+                        <input type="text" id="fromAccount" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="toAccount">To Account *</label>
+                        <input type="text" id="toAccount" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="transferAmount">Amount *</label>
+                        <input type="number" id="transferAmount" required min="1" step="0.01">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Transfer</button>
+            </form>
+        </div>
+
+        <div class="form-section">
+            <h3>Transaction History</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Transaction ID</th>
+                        <th>Type</th>
+                        <th>From Account</th>
+                        <th>To Account</th>
+                        <th>Status</th>
+                        <th>Date & Time</th>
+                    </tr>
+                </thead>
+                <tbody id="transactionsTableBody">
+                    <tr>
+                        <td colspan="6" class="loading">Loading...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="../js/app.js"></script>
+    <script src="../js/transaction.js"></script>
+</body>
+</html>

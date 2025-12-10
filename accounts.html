@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accounts - Core Banking System</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h1>🏦 Core Banking System</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Dashboard</a></li>
+                <li><a href="customers.html">Customers</a></li>
+                <li><a href="accounts.html" class="active">Accounts</a></li>
+                <li><a href="transactions.html">Transactions</a></li>
+                <li><a href="loans.html">Loans</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container main-content">
+        <h2>Account Management</h2>
+
+        <div class="form-section">
+            <h3>Create New Account</h3>
+            <form id="accountForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="customerId">Customer ID *</label>
+                        <input type="text" id="customerId" required placeholder="Enter Customer ID">
+                    </div>
+                    <div class="form-group">
+                        <label for="accountType">Account Type *</label>
+                        <select id="accountType" required>
+                            <option value="">Select Type</option>
+                            <option value="SAVINGS">Savings</option>
+                            <option value="CURRENT">Current</option>
+                            <option value="BUSINESS">Business</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="initialBalance">Initial Balance *</label>
+                        <input type="number" id="initialBalance" required min="500" step="0.01" placeholder="Minimum 500">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Create Account</button>
+            </form>
+        </div>
+
+        <div class="form-section">
+            <h3>All Accounts</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Account No</th>
+                        <th>Customer ID</th>
+                        <th>Type</th>
+                        <th>Balance</th>
+                        <th>Status</th>
+                        <th>Opening Date</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="accountsTableBody">
+                    <tr>
+                        <td colspan="7" class="loading">Loading...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="../js/app.js"></script>
+    <script src="../js/account.js"></script>
+</body>
+</html>
